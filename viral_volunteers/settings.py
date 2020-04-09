@@ -31,16 +31,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    #'vv_app.apps.VvAppConfig',
+    'vv_app.apps.VvAppConfig',
     'notices.apps.NoticesConfig',
+    'api.apps.ApiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
-    'vv_app',
+    #'api',
+    #'vv_app',
 ]
 
 MIDDLEWARE = [

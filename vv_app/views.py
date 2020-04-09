@@ -1,24 +1,30 @@
 from django.shortcuts import render
 
 # Dummy data
-posts = [
+dummy_notices = [
     {
         'author': 'CoreyMS',
         'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'August 27, 2018'
+        'body': 'First post content',
+        'created_at': 'August 27, 2018'
     },
     {
         'author': 'Jane Doe',
         'title': 'Blog Post 2',
-        'content': 'Second post content',
-        'date_posted': 'July 30, 2018'
+        'body': 'Second post content',
+        'created_at': 'July 30, 2018'
+    },
+    {
+        'author': 'Ronny Nose',
+        'title': 'Blog Post 3',
+        'body': 'New something something',
+        'created_at': 'April 3, 2019'
     }
 ]
 
 def home(request):
     context = {
-        'posts': posts
+        'notices': dummy_notices
     }
     return render(request, 'vv_app/home.html', context)
 

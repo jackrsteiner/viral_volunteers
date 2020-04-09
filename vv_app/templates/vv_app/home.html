@@ -1,9 +1,16 @@
 {% extends "vv_app/base.html" %}
 {% block content %}
     <h1>Viral Volunteers Home!</h1>
-    {% for post in posts %}
-        <h1>{{ post.title }}</h1>
-        <p>By {{ post.author }} on {{ post.date_posted }}</p>
-        <p>{{ post.content }}</p>
+    {% for notice in notices %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ notice.author }}</a>
+                <small class="text-muted">{{ notice.created_at }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ notice.title }}</a></h2>
+            <p class="article-content">{{ notice.body }}</p>
+        </div>
+    </article>
     {% endfor %}
 {% endblock content %}

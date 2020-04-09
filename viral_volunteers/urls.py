@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from api.resources import NoticeResource
+
+notice_resource = NoticeResource()
 
 urlpatterns = [
     path('', include('vv_app.urls')),
     path('admin/', admin.site.urls),
     path('notices/', include('notices.urls')),
-
+    path('api/', include(notice_resource.urls)),
 ]
