@@ -1,5 +1,5 @@
 from tastypie.resources import ModelResource
-from api.models import Notice
+from notices.models import Notice
 from tastypie.authorization import Authorization
 
 class NoticeResource(ModelResource):
