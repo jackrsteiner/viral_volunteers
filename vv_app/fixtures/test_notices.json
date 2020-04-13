@@ -1,0 +1,116 @@
+[
+    {
+        "model": "notices.notice",
+        "pk": 1,
+        "fields": {
+            "title": "National COVID-19 Convalescent Plasma Project",
+            "author": 1,
+            "created_at": "2020-04-10T18:05:49.940Z",
+            "last_modified": "2020-04-10T18:05:49.940Z",
+            "category": "opportunity",
+            "body": "The Mayo Clinic has been named the national site for Convalescent Plasma Expanded Access\r\nProgram and will be the lead institution providing coordinated access to investigational\r\nconvalescent plasma for hospitalized patients with severe or life-threatening COVID-19, or those\r\nat high risk of progression to severe or life-threatening disease.\r\nThe program grew from a national initiative of physicians and investigators from over 40\r\ninstitutions who self-organized to investigate the use of convalescent plasma during the\r\nCOVID-19 pandemic. These institutions include Mayo Clinic, Johns Hopkins University,\r\nWashington University, Einstein Medical Center, Icahn School of Medicine at Mount Sinai,\r\nMichigan State University (see more information about individual locations below).\r\nTo donate, the general requirements are:\r\n\u25cf You must have been symptom-free for a period of time, usually at least 14 days.\r\n\u25cf If you have tested positive for COVID-19, you will need to show that you now have a\r\nnegative test. You can begin that process yourself by contacting the organization that\r\ntested you in the first place. Some locations that take plasma may be able to provide the\r\nCOVID-19 test, but most will not.\r\n\u25cf If you think you had COVID-19, but did not actually have a positive test, the donation site\r\nwill likely test your blood to see if you have antibodies to the virus, which will tell you\r\nwhether you were infected with the virus in the past\r\n\u25cf Donation sites may request that you wear a mask while donating.",
+            "info_link": "http://ccpp19.org",
+            "contact_email": "",
+            "contact_phone": "",
+            "postal": "11021",
+            "country": "US",
+            "proximity": 0,
+            "active": true
+        }
+    },
+    {
+        "model": "notices.notice",
+        "pk": 2,
+        "fields": {
+            "title": "Tufts University COVID-19 Convalescent Patient Registry",
+            "author": 1,
+            "created_at": "2020-04-10T18:08:18.891Z",
+            "last_modified": "2020-04-10T18:08:18.891Z",
+            "category": "opportunity",
+            "body": "This registry will connect you to research studies in your area or from around the country\r\nconducted by researchers at major academic institutions, non-governmental organizations and\r\nbiopharmaceutical companies. Tufts Clinical Translational Science Institute is hosting a research\r\nregistry under the direction of Andreas Klein, MD collecting information on persons who have\r\nrecovered following an infection with the SARS-CoV-2 virus that causes the illness called\r\nCOVID-19.  If you choose to be entered in this registry, you will be asked to complete an initial\r\nsurvey regarding your COVID-19 illness experience and how likely you would be to want to take\r\npart in certain types of research activities.",
+            "info_link": "https://collaborate.tuftsctsi.org/redcap/surveys/?s=3AJAL9FMXD",
+            "contact_email": "",
+            "contact_phone": "",
+            "postal": "11021",
+            "country": "US",
+            "proximity": 0,
+            "active": true
+        }
+    },
+    {
+        "model": "notices.notice",
+        "pk": 3,
+        "fields": {
+            "title": "Red Cross Plasma Donation",
+            "author": 1,
+            "created_at": "2020-04-10T18:09:38.315Z",
+            "last_modified": "2020-04-10T18:09:38.315Z",
+            "category": "opportunity",
+            "body": "The Red Cross is establishing a program to work with clinicians on providing such convalescent\r\nplasma, as needed. You must have fully recovered from COVID-19, and have antibodies in your\r\nplasma that attack the virus. Donated convalescent plasma will be tested and analysed as\r\npotential treatment for patients seriously ill with COVID-19.",
+            "info_link": "http://www.redcrossblood.org/plasma4covid",
+            "contact_email": "",
+            "contact_phone": "",
+            "postal": "11021",
+            "country": "US",
+            "proximity": 0,
+            "active": true
+        }
+    },
+    {
+        "model": "notices.notice",
+        "pk": 4,
+        "fields": {
+            "title": "Biological Specialty Company",
+            "author": 1,
+            "created_at": "2020-04-10T18:21:12.488Z",
+            "last_modified": "2020-04-10T18:21:12.488Z",
+            "category": "opportunity",
+            "body": "BSC is seeking donors of blood or plasma from those who have an ACTIVE COVID infection as\r\nwell as people who are recovered. They have mobile units that will come to you.",
+            "info_link": "https://www.biospecialty.com/covid-19-confirm-special-project",
+            "contact_email": "",
+            "contact_phone": "",
+            "postal": "11021",
+            "country": "US",
+            "proximity": 0,
+            "active": true
+        }
+    },
+    {
+        "model": "notices.notice",
+        "pk": 5,
+        "fields": {
+            "title": "Collaboration Developing Potential COVID-19 Hyperimmune Therapy",
+            "author": 1,
+            "created_at": "2020-04-10T18:26:13.118Z",
+            "last_modified": "2020-04-10T18:26:13.118Z",
+            "category": "opportunity",
+            "body": "Leading manufacturers of plasma-derived therapies have formed an alliance to develop a\r\nhyperimmune immunoglobulin that can be used to treat the COVID-19 virus. The partnership\r\nwas initiated by Takeda and CSL Behring, and are joined by Biotest, BPL, LFB, and Octapharma.\r\nThe companies will devote their own resources to the effort and also plan to collaborate with\r\ngovernment and academic groups on a number of activities including clinical trials.\r\nThey are working immediately on developing an unbranded treatment that will have the\r\npotential to treat individuals with serious complications from COVID-19. They are in need of\r\nplasma donations from people who have fully recovered from COVID-19 and whose blood\r\ncontains antibodies that can fight the novel coronavirus. Once collected, the \u201cconvalescent\u201d\r\nplasma would then be transported to manufacturing facilities where it undergoes proprietary\r\nprocessing, including effective virus inactivation and removal processes, and then is purified into\r\nthe product. It may be possible to donate plasma to more than one facility.",
+            "info_link": "https://www.donatingplasma.org/donation/find-a-donor-center",
+            "contact_email": "",
+            "contact_phone": "",
+            "postal": "11021",
+            "country": "US",
+            "proximity": 0,
+            "active": true
+        }
+    },
+    {
+        "model": "notices.notice",
+        "pk": 6,
+        "fields": {
+            "title": "American Association of Blood Banks",
+            "author": 1,
+            "created_at": "2020-04-10T18:26:49.640Z",
+            "last_modified": "2020-04-10T18:26:49.640Z",
+            "category": "idea",
+            "body": "Many blood donation locations are beginning to collect convalescent plasma from recovered\r\nCovid-19 patients, but their websites have not been updated and due to the emergency situation,\r\nthey have not been able to get the word out to the public. A listing of accredited blood donation\r\nsites in the USA is available below. Please find the location nearest you and call to see if they are\r\naccepting plasma donations.",
+            "info_link": "http://www.aabb.org/tm/donation/Pages/Blood-Bank-Locator.aspx",
+            "contact_email": "",
+            "contact_phone": "",
+            "postal": "11021",
+            "country": "US",
+            "proximity": 0,
+            "active": true
+        }
+    }
+]

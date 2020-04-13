@@ -1,0 +1,13 @@
+[
+    { "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "jac",
+            "password": "pbkdf2_sha256$180000$T9OL7RvwTSPy$JDOXjOJl1zVx5sDDQm8Lk2XznVf3Uc1cotrfz4WMLR0=",
+            "email": "jac@covols.com",
+            "is_superuser": true,
+            "is_staff": true,
+            "is_active": true
+        }
+    }
+]

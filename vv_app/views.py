@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from notices.models import Notice
 
 # Dummy data
 dummy_notices = [
@@ -24,7 +25,7 @@ dummy_notices = [
 
 def home(request):
     context = {
-        'notices': dummy_notices
+        'notices': Notice.objects.all()
     }
     return render(request, 'vv_app/home.html', context)
 
