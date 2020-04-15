@@ -1,13 +1,24 @@
 {% extends "vv_app/base.html" %}
 {% block content %}
-    <h1>About Viral Volunteers</h1>
-    <article class="media content-section">
-        <p class="article-content">
+<h1>About Viral Volunteers</h1>
+<article class="media content-section">
+    <div class="article-content">
+        <div>
             This is a notice board for people looking to help out with the covid-19 pandemic. If you have an <b>idea</b> for how others can help, need to make an <b>appeal</b> for assistance, or you know an organization that is offering <b>opportunities</b> for volunteers, this site may be for you.
-        
-            This board is not for healthcare professionals or paid opportunities.
-        
-            It is lightly curated to prevent misuse.
-        </p>
-    </article>
+
+            Healthcare professionals probably want to look elsewhere.
+            Paid opportunities should not be listed.
+
+            Lightly curated to prevent misuse.
+        </div>
+        <div>
+            Examples:
+            <ul>
+                <li>Appeal - "Would someone deliver groceries to me"</li>
+                <li>Idea - "People should deliver groceries to their elderly neighbors"</li>
+                <li>Opporunity - "People who want to volunteer to deliver groceries to elderly people in their neighborhoods should register their interest"</li>
+            </ul>
+        </div>
+    </div>
+</article>
 {% endblock content %}

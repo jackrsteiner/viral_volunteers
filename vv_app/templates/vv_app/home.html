@@ -1,18 +1,5 @@
 {% extends "vv_app/base.html" %}
 {% block content %}
     <h1>Viral Volunteers Home!</h1>
-    {% for notice in notices %}
-    <article class="media content-section">
-        <div class="media-body">
-            <div class="article-metadata">
-                Contributed by <a class="mr-2" href="#">{{ notice.author }}</a> {{ notice.created_at }}
-                {% if notice.last_modified|date != notice.created_at|date %}
-                    <br><small class="text-muted">Updated {{ notice.last_modified}}</small>
-                {% endif %}
-             </div>
-            <h2><a class="article-title" href="#">{{ notice.title }}</a></h2>
-            <p class="article-content">{{ notice.body }}</p>
-        </div>
-    </article>
-    {% endfor %}
+    {% include 'notices/table.html' %}
 {% endblock content %}

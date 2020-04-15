@@ -18,11 +18,13 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from api.resources import NoticeResource
 from users import views as user_views
+from notices.views import NoticeListView
 
 notice_resource = NoticeResource()
 
 urlpatterns = [
-    path('', include('vv_app.urls')),
+    path('', NoticeListView.as_view(), name='vv_app-home'),
+    path('about/', include('vv_app.urls')),
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
@@ -30,4 +32,5 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('notices/', include('notices.urls')),
     path('api/', include(notice_resource.urls)),
+    path('tinymce/', include('tinymce.urls')),
 ]

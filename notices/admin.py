@@ -1,9 +1,9 @@
 from django.contrib import admin
-from notices.models import Notice, Contact, Location, Comment
+from notices.models import Notice, Comment
 
 admin.site.register(Notice)
-admin.site.register(Contact)
-admin.site.register(Location)
+#admin.site.register(Contact)
+#admin.site.register(Location)
 admin.site.register(Comment)
 
 class CommentAdmin(admin.ModelAdmin):

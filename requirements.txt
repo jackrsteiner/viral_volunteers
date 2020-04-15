@@ -3,4 +3,6 @@ django-countries==6.1.2
 django-crispy-forms==1.9.0
 django-phonenumber-field==4.0.0
 django-tastypie==0.14.3
+django-tinymce4-lite==1.8.0
+django-tables2==2.3.1
 geocoder==1.38.1

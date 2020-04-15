@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'django_countries',
     'geocoder',
+    'tinymce',
+    'django_tables2',
+    
     #'api',
     #'vv_app',
 ]
@@ -130,6 +133,21 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+DJANGO_TABLES2_TEMPLATE = 'django_tables2/bootstrap4.html'
+
+TINYMCE_DEFAULT_CONFIG = {
+    'selector': 'textarea',
+    'theme': 'modern',
+    'plugins': 'link preview contextmenu table lists',
+    'toolbar1': 'formatselect | bold italic underline | alignleft aligncenter alignright alignjustify '
+               '| bullist numlist | outdent indent | table | link | preview ',
+    'contextmenu': 'formats | link ',
+    'menubar': False,
+    'inline': False,
+    'statusbar': True,
+    'width': 'auto',
+    'height': 360,
+}
 
 LOGIN_REDIRECT_URL = 'vv_app-home'
 LOGIN_URL = 'login'

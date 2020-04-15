@@ -9,6 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- Required for TinyMCE to work on user pages-->
+    {{ form.media }}
+
     <link rel="stylesheet" type "text/css" href="{% static 'vv_app/main.css' %}">
 
     {% if title %}
@@ -27,17 +30,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
-                        <a class="nav-item nav-link" href="{% url 'vv_app-home' %}">Home</a>
                         <a class="nav-item nav-link" href="{% url 'vv_app-about' %}">About</a>
+                        <a class="nav-item nav-link" href="{% url 'notices-notice_create' %}">New Notice</a>
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
                         {% if user.is_authenticated %}
-                            <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                            <a class="nav-item nav-link" href="{% url 'profile' %}">{{ user.username }}</a>
                             <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-                        {% else %}
-                            <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                            <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
                         {% endif %}
                     </div>
                 </div>
@@ -59,6 +59,24 @@
             </div>
             <div class="col-md-4">
                 <div class="content-section">
+                    <h3>Notice Types</h3>
+                    <p class='text-muted'>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-light">
+                                <a href="#">Appeals</a>:
+                                Requests by an individual seeking one-time or short-term assistance.
+                            </li>
+                            <li class="list-group-item list-group-item-light">
+                                <a href="#">Ideas</a>:
+                                Suggestions for actions people can take to help.                            </li>
+                            <li class="list-group-item list-group-item-light">
+                                <a href="#">Opportunities</a>:
+                                Details to connect with organizations (formal or informal) that are seeking volunteers.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="content-section">
                     <h3>Our Sidebar</h3>
                     <p class='text-muted'>You can put any information here you'd like.
                         <ul class="list-group">
@@ -68,11 +86,17 @@
                             <li class="list-group-item list-group-item-light">etc</li>
                         </ul>
                     </p>
-                    <h4>Geocoding provided by openstreetmap.org</h4>
                 </div>
             </div>
         </div>
     </main>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">
+                Created by <a href="jac@viralvolunteers.org">jac@viralvolunteers.org</a>. Geocoding provided by osm.org
+            </span>
+        </div>
+    </footer>
 
     <!-- Source Bootstrap js-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
