@@ -67,7 +67,7 @@ ROOT_URLCONF = 'viral_volunteers.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,10 +138,12 @@ DJANGO_TABLES2_TEMPLATE = 'django_tables2/bootstrap4.html'
 TINYMCE_DEFAULT_CONFIG = {
     'selector': 'textarea',
     'theme': 'modern',
-    'plugins': 'link preview contextmenu table lists',
+    'plugins': 'link preview contextmenu lists',
     'toolbar1': 'formatselect | bold italic underline | alignleft aligncenter alignright alignjustify '
-               '| bullist numlist | outdent indent | table | link | preview ',
+                '| bullist numlist | outdent indent | link | preview ',
     'contextmenu': 'formats | link ',
+    'valid_elements':   '@[class],p[style],h3,h4,h5,h6,a[href|target],strong/b,'
+                        'div[align],br,ul,ol,li',
     'menubar': False,
     'inline': False,
     'statusbar': True,
@@ -149,5 +151,5 @@ TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
 }
 
-LOGIN_REDIRECT_URL = 'vv_app-home'
+LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'

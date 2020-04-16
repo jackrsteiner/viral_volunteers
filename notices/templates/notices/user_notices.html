@@ -1,4 +1,4 @@
-{% extends "vv_app/base.html" %}
+{% extends "base.html" %}
 {% block content %}
 <h1 class="mb-3" >Notices by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
     {% for notice in notices %}

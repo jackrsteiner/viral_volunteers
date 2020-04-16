@@ -6,3 +6,4 @@ django-tastypie==0.14.3
 django-tinymce4-lite==1.8.0
 django-tables2==2.3.1
 geocoder==1.38.1
+django-filter==2.2.0

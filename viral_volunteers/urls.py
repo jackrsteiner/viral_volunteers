@@ -19,12 +19,16 @@ from django.urls import path, include
 from api.resources import NoticeResource
 from users import views as user_views
 from notices.views import NoticeListView
+from . import views
 
 notice_resource = NoticeResource()
 
 urlpatterns = [
-    path('', NoticeListView.as_view(), name='vv_app-home'),
-    path('about/', include('vv_app.urls')),
+    path('', NoticeListView.as_view(), name='home'),
+    path('about/', views.about, name='about'),
+    path('testing', views.testim, name='testy'),
+    path('', include ('vv_app.urls')),
+    #path('about/', include('vv_app.urls')),
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
