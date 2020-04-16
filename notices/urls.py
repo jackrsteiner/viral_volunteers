@@ -8,13 +8,13 @@ from .views import (
     NoticeTableViewHome,
     UserNoticeListView
 )
-from . import views
+from notices import views
 
 urlpatterns = [
     #path('home/', , name='notices-home'),
 #    path('about/', views.about, name='notices-about'),
     path('', NoticeListView.as_view(), name='notices-notice_list'),
-#    path('', views.notice_list, name='notices-notice_list'),
+    path('search/', views.notice_search_table, name='notice_functable'),
     path('<int:pk>/', NoticeDetailView.as_view(), name='notices-notice_detail'),
     path('new/', NoticeCreateView.as_view(), name='notices-notice_create'),
     path('<int:pk>/edit/', NoticeUpdateView.as_view(), name='notices-edit'),

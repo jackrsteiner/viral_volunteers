@@ -10,19 +10,40 @@ from django.views.generic import (
 from notices.models import Notice
 from django_tables2 import SingleTableView
 from .tables import NoticeTable
+from .filters import NoticeFilter
 
-def notice_list(request):
+def notice_search_table(request):
+    notices = Notice.objects.all()
+    myFilter = NoticeFilter(request.GET, queryset=notices)
+    notices = myFilter.qs
+
     context = {
-        'notices': Notice.objects.all()
+        'notices': notices, 'myFilter': myFilter
     }
-    return render(request, 'notices/list.html', context)
+    return render(request, 'notices/notice_functable.html', context)
 
 class NoticeListView(ListView):
     model = Notice
-    template_name = 'notices/list.html' # default is <app>/<model>_<viewtype>.html
+    template_name = 'notices/notice_list.html' # default is <app>/<model>_<viewtype>.html
     context_object_name = 'notices'
     ordering = ['-last_modified']
     paginate_by = 5
+
+class NoticeTableView(SingleTableView):
+    model = Notice
+    table_class = NoticeTable
+    template_name = 'notices/notice_table.html'
+    #myFilter = NoticeFilter()
+    #queryset = Notice.objects.filter(category='opportunity')
+    def get_queryset(self):
+        qs = Notice.objects.all()
+        notice_filtered_list = NoticeFilter(self.request.GET, queryset=qs)
+        return notice_filtered_list.qs
+
+class NoticeTableViewHome(SingleTableView):
+    model = Notice
+    table_class = NoticeTable
+    template_name = 'notices/table.html'
 
 class UserNoticeListView(ListView):
     model = Notice
@@ -59,12 +80,7 @@ class NoticeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return True
         return False
 
-class NoticeTableView(SingleTableView):
-    model = Notice
-    table_class = NoticeTable
-    template_name = 'notices/table_old.html'
-
-class NoticeTableViewHome(SingleTableView):
-    model = Notice
-    table_class = NoticeTable
-    template_name = 'notices/table.html'
+# class NoticeTableView(SingleTableView):
+#     model = Notice
+#     table_class = NoticeTable
+#     template_name = 'notices/table_old.html'

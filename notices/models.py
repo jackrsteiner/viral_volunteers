@@ -43,6 +43,7 @@ class Notice(models.Model):
         ('idea', 'Idea'),
         ('appeal', 'Appeal'),
         ('opportunity', 'Opportunity'),
+        ('service', 'Service')
     ]
     category = models.CharField(max_length=12,choices=CATEGORY_CHOICES, default='idea')
     body = HTMLField()
@@ -55,7 +56,7 @@ class Notice(models.Model):
     postal = models.CharField(max_length=10, default='', blank=True)
     #location = models.ForeignKey(Location, on_delete=models.CASCADE, default=1, blank=True)
     active = models.BooleanField(default=True)
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=True)
     # comments -- needs to be some other model/foreignkey
 
     def __str__(self):

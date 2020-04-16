@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+<article class="media content-section">
+    <div class="media-body">
+        <form method="get">
+            {{ myFilter.form }}
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        <p class="article-content">
+            <div class="row">
+                <div class="col-md">
+                    <div class="card card-body">
+                        <table class="table table-sm">
+                            <tr>
+                                <th>Active</th>
+                                <th>Modified</th>
+                                <th>Category</th>
+                                <th>Title</th>
+                                <th>Country</th>
+                                <th>State/Province</th>
+                            </tr>
+            
+                            {% for notice in notices %}
+            
+                            <tr>
+                                    <td>{{notice.active}}</td>
+                                    <td>{{notice.last_modified}}</td>
+                                    <td>{{notice.category}}</td>
+                                    <td><a href="{% url 'notices-notice_detail' notice.id %}">
+                                        {{notice.title}}
+                                    </a></td>
+                                    <td>{{notice.country}}</td>
+                                    <td>{{notice.province}}</td>
+                            </tr>
+                            {% endfor %}
+            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </p>
+    </div>
+</article>
+{% endblock %}

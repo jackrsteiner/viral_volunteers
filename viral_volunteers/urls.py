@@ -18,13 +18,13 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from api.resources import NoticeResource
 from users import views as user_views
-from notices.views import NoticeListView
+from notices import views as notice_views
 from . import views
 
 notice_resource = NoticeResource()
 
 urlpatterns = [
-    path('', NoticeListView.as_view(), name='home'),
+    path('', notice_views.notice_search_table, name='home'),
     path('about/', views.about, name='about'),
     path('testing', views.testim, name='testy'),
     path('', include ('vv_app.urls')),

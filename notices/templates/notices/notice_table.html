@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+{% load render_table from django_tables2 %}
+
+<article class="media content-section">
+    <div class="media-body">
+        <form method="get">
+            {{ myFilter }}
+            {{ notice_filtered_list }}
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+        <p class="article-content">
+            {% render_table table %} 
+        </p>
+    </div>
+</article>
+
+{% endblock content %}
