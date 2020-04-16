@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'vv_app.apps.VvAppConfig',
     'notices.apps.NoticesConfig',
     'users.apps.UsersConfig',
     'api.apps.ApiConfig',
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     'geocoder',
     'tinymce',
     'django_tables2',
+    'django_filters'
     
     #'api',
     #'vv_app',
