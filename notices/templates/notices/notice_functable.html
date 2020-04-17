@@ -3,50 +3,33 @@
 {% block content %}
 
 <article class="media content-section">
-    <div class="media-body">
-        <form method="get">
-            {% for field in myFilter.form.visible_fields %}
-                <div class="form-group">
-                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                    {{ field|add_class:'form-control' }}
-                    {% for error in field.errors %}
-                        <span class="help-block">{{ error }}</span>
-                    {% endfor %}
-                </div>
+    <div class="card card-body table-responsive">
+        <table class="table table-striped table-bordered table-sm">
+            <tr>
+                <th>Modified</th>
+                <th>Category</th>
+                <th class="text-nowrap">Title</th>
+                <th>Country</th>
+                <th>State</th>
+            </tr>
+            {% for notice in notices %}
+            <tr>
+                <td>{{notice.last_modified|date:"jMY "}}</td>
+                <td>{{notice.category|capfirst}}</td>
+                <td><a href="{% url 'notices-notice_detail' notice.id %}">
+                        {{notice.title}}
+                    </a></td>
+                <td>{{notice.country}}</td>
+                <td>{{notice.province}}</td>
+            </tr>
             {% endfor %}
-            <button class="btn btn-primary" type="submit">Search</button>
-        </form>
-        <p class="article-content">
-            <div class="row">
-                <div class="col-md">
-                    <div class="card card-body">
-                        <table class="table table-sm">
-                            <tr>
-                                <th>Modified</th>
-                                <th>Category</th>
-                                <th>Title</th>
-                                <th>Country</th>
-                                <th>State/Province</th>
-                            </tr>
-            
-                            {% for notice in notices %}
-            
-                            <tr>
-                                    <td>{{notice.last_modified}}</td>
-                                    <td>{{notice.category}}</td>
-                                    <td><a href="{% url 'notices-notice_detail' notice.id %}">
-                                        {{notice.title}}
-                                    </a></td>
-                                    <td>{{notice.country}}</td>
-                                    <td>{{notice.province}}</td>
-                            </tr>
-                            {% endfor %}
-            
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </p>
+        </table>
     </div>
 </article>
-{% endblock %}
+{% endblock content %}
+
+{% block search%}
+<div class="content-section">
+    {% include "search.html" %} 
+</div>
+{% endblock search%}

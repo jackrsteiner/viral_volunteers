@@ -60,23 +60,24 @@
                 {% block content %}{% endblock %}
             </div>
             <div class="col-md-4">
-                <div class="content-section">
+                {% block search %}{% endblock %}
+                <div class="content-section p-2">
                     <h3>Notice Types</h3>
                     <p class='text-muted'>
                         <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">
+                            <li class="list-group-item list-group-item-light p-2">
                                 <a href="{% url 'home' %}?category=appeal">Appeals</a>:
                                 Requests by an individual seeking one-time or short-term assistance.
                             </li>
-                            <li class="list-group-item list-group-item-light">
+                            <li class="list-group-item list-group-item-light p-2">
                                 <a href="{% url 'home' %}?category=idea">Ideas</a>:
                                 Suggestions for actions people can take to help.                            </li>
-                            <li class="list-group-item list-group-item-light">
+                            <li class="list-group-item list-group-item-light p-2">
                                 <a href="{% url 'home' %}?category=opportunity">Opportunities</a>:
                                 Details to connect with organizations (formal or informal) that are seeking volunteers.
                             </li>
                             <br>
-                            <li class="list-group-item list-group-item-light">
+                            <li class="list-group-item list-group-item-light p-2">
                                 <a href="{% url 'home' %}?category=service">Services</a>:
                                 Assistance from organizations and individuals.
                             </li>

@@ -22,6 +22,17 @@ def notice_search_table(request):
     }
     return render(request, 'notices/notice_functable.html', context)
 
+
+def notice_search(request):
+    notices = Notice.objects.all()
+    myFilter = NoticeFilter(request.GET, queryset=notices)
+    notices = myFilter.qs
+
+    context = {
+        'notices': notices, 'myFilter': myFilter
+    }
+    return render(request, 'notices/notice_functable.html', context)
+
 class NoticeListView(ListView):
     model = Notice
     template_name = 'notices/notice_list.html' # default is <app>/<model>_<viewtype>.html
