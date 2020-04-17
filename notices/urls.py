@@ -4,11 +4,15 @@ from .views import (
     NoticeDetailView,
     NoticeCreateView,
     NoticeUpdateView,
-    NoticeTableView,
     NoticeTableViewHome,
-    UserNoticeListView
+    UserNoticeListView,
+    NoticeFilter,
+    NoticeTableView
+
 )
 from notices import views
+from django_filters.views import FilterView
+from .filters import NoticeTableFilter
 
 urlpatterns = [
     #path('home/', , name='notices-home'),
@@ -18,8 +22,10 @@ urlpatterns = [
     path('<int:pk>/', NoticeDetailView.as_view(), name='notices-notice_detail'),
     path('new/', NoticeCreateView.as_view(), name='notices-notice_create'),
     path('<int:pk>/edit/', NoticeUpdateView.as_view(), name='notices-edit'),
-    path('table/', NoticeTableView.as_view(), name='notices-table'),
     path('table/home', NoticeTableViewHome.as_view()),
     path('user/<str:username>', UserNoticeListView.as_view(), name='user-notice_list'),
+
+    path('table/', NoticeTableView.as_view(
+        template_name='notices/notice_table.html'), name='notices-table'),
 
 ]

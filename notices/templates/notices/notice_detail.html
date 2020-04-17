@@ -1,25 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Notice {{ object.id }} - {{ object.title }}!</h1>
-        <article class="media content-section">
-            <div class="media-body">
-                <div class="article-metadata">
-                    Contributed by <a class="mr-2" href="{% url 'user-notice_list' object.author.username %}">{{ object.author }}</a>on {{ object.created_at }}
-                    {% if object.last_modified|date != object.created_at|date %}
-                    <br><small class="text-muted">Updated {{ object.last_modified}}</small>
-                    {% endif %}
-                    {% if object.author == user %}
-                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'notices-edit' object.id %}">Edit This Notice</a>
-                    {% endif %}
-                </div>                
-                <h2 class="article-title">{{ object.title }}</a></h2>
-                <p class="article-content">{{ object.body | safe }}</p>
-                <p class="article-content">{{ object.country }}</p>
-                <p class="article-content">{{ object.province }}</p>
-                <p class="article-content">{{ object.postal }}</p>
-                <p class="article-content">{{ object.web }}</p>
-                <p class="article-content">{{ object.email }}</p>
-                <p class="article-content">{{ object.phone }}</p>
-            </div>
-        </article>
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                Contributed by <a class="mr-2" href="{% url 'user-notice_list' object.author.username %}">{{ object.author }}</a>on {{ object.created_at }}
+                {% if object.last_modified|date != object.created_at|date %}
+                <br><small class="text-muted">Updated {{ object.last_modified}}</small>
+                {% endif %}
+                {% if object.author == user %}
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'notices-edit' object.id %}">Edit This Notice</a>
+                {% endif %}
+            </div>                
+            <h2 class="article-title">{{ object.title }}</a></h2>
+            <p class="article-content">{{ object.body | safe }}</p>
+            <p class="article-content">{{ object.country }}</p>
+            <p class="article-content">{{ object.province }}</p>
+            <p class="article-content">{{ object.postal }}</p>
+            <p class="article-content">{{ object.web|urlize }}</p>
+            <p class="article-content">{{ object.email|urlize }}</p>
+            <p class="article-content">{{ object.phone }}</p>
+        </div>
+    </article>
 {% endblock content %}

@@ -10,7 +10,7 @@ from django.views.generic import (
 from notices.models import Notice
 from django_tables2 import SingleTableView
 from .tables import NoticeTable
-from .filters import NoticeFilter
+from .filters import NoticeFilter, NoticeTableFilter
 
 def notice_search_table(request):
     notices = Notice.objects.all()
@@ -28,17 +28,6 @@ class NoticeListView(ListView):
     context_object_name = 'notices'
     ordering = ['-last_modified']
     paginate_by = 5
-
-class NoticeTableView(SingleTableView):
-    model = Notice
-    table_class = NoticeTable
-    template_name = 'notices/notice_table.html'
-    #myFilter = NoticeFilter()
-    #queryset = Notice.objects.filter(category='opportunity')
-    def get_queryset(self):
-        qs = Notice.objects.all()
-        notice_filtered_list = NoticeFilter(self.request.GET, queryset=qs)
-        return notice_filtered_list.qs
 
 class NoticeTableViewHome(SingleTableView):
     model = Notice
@@ -79,6 +68,23 @@ class NoticeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         if self.request.user == notice.author:
             return True
         return False
+
+class NoticeTableView(ListView):
+    model = Notice
+    template_name = 'notices/notice_table.html'
+    filterset_class = NoticeTableFilter
+
+# class NoticeTableView(SingleTableView):
+#     model = Notice
+#     table_class = NoticeTable
+#     filterset_class = NoticeFilter
+#     template_name = 'notices/notice_table.html'
+#     myFilter = NoticeFilter()
+#     queryset = Notice.objects.filter(category='opportunity')
+#     def get_queryset(self):
+#         qs = Notice.objects.all()
+#         notice_filtered_list = NoticeFilter(self.request.GET, queryset=qs)
+#         return notice_filtered_list.qs
 
 # class NoticeTableView(SingleTableView):
 #     model = Notice

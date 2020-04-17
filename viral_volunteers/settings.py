@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'geocoder',
     'tinymce',
     'django_tables2',
-    'django_filters'
+    'django_filters',
+    'widget_tweaks',
     
     #'api',
     #'vv_app',
@@ -153,3 +154,6 @@ TINYMCE_DEFAULT_CONFIG = {
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+
+EMAIL_HOST = '127.0.0.1'
+EMAIL_PORT = '1025'

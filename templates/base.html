@@ -1,4 +1,6 @@
 {% load static %}
+{% load widget_tweaks %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,24 +83,31 @@
                         </ul>
                     </p>
                 </div>
-                <div class="content-section">
-                    <h3>Our Sidebar</h3>
-                    <p class='text-muted'>You can put any information here you'd like.
+                <!-- <div class="content-section">
+                    <h3>Search</h3>
                         <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">Latest Posts</li>
-                            <li class="list-group-item list-group-item-light">Announcements</li>
-                            <li class="list-group-item list-group-item-light">Calendars</li>
-                            <li class="list-group-item list-group-item-light">etc</li>
+                           <form method="get">
+                                {% for field in myFilter.form.visible_fields %}
+                                    <li class="list-group-item list-group-item-light">
+                                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                        {{ field|add_class:'form-control' }}
+                                        {% for error in field.errors %}
+                                            <span class="help-block">{{ error }}</span>
+                                        {% endfor %}
+                                    </li>
+                                {% endfor %}
+                                <button class="btn btn-primary" type="submit">Search</button>
+                            </form>
                         </ul>
                     </p>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>
     <footer class="footer">
         <div class="container">
             <span class="text-muted">
-                Created by <a href="jac@viralvolunteers.org">jac@viralvolunteers.org</a>. Geocoding provided by osm.org
+                Created by <a href="jac@viralvolunteers.org">jac@viralvolunteers.org</a>.
             </span>
         </div>
     </footer>
