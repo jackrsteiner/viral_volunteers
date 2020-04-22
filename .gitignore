@@ -1,1 +1,2 @@
-viral_volunteers/settings_production.py
+viral_volunteers/settings_deploy.py
+deployment

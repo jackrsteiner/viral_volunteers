@@ -7,10 +7,13 @@ from django.views.generic import (
     CreateView,
     UpdateView
 )
+from notices.forms import NoticeCreateForm
 from notices.models import Notice
 from django_tables2 import SingleTableView
-from .tables import NoticeTable
-from .filters import NoticeFilter, NoticeTableFilter
+from django_tables2.views import SingleTableMixin
+from django_filters.views import FilterView
+from .tables import NoticeTable, NoticeTableCustom
+from .filters import NoticeFilter, NoticeTableFilter, NoticeTableCustomFilter
 
 def notice_search_table(request):
     notices = Notice.objects.all()
@@ -60,7 +63,7 @@ class NoticeDetailView(DetailView):
 
 class NoticeCreateView(LoginRequiredMixin, CreateView):
     model = Notice
-    fields = ['title', 'category', 'body', 'web', 'email', 'phone', 'country', 'province', 'postal']
+    form_class = NoticeCreateForm
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -101,3 +104,11 @@ class NoticeTableView(ListView):
 #     model = Notice
 #     table_class = NoticeTable
 #     template_name = 'notices/table_old.html'
+
+class FilteredTableView(SingleTableMixin, FilterView):
+    table_class = NoticeTableCustom
+    model = Notice
+    template_name = "notices/tablefiltered.html"
+
+    filterset_class = NoticeTableCustomFilter
+    table_pagination = {"per_page": 10}

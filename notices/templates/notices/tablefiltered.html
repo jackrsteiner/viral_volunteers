@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block search%}
+<div class="content-section">
+    <form method="get">
+        <div class="input-group">
+                {% render_field filter.form.title class="input form-control form-control-sm" placeholder="Title Keywords" %}
+            <div class="input-group">
+                {% render_field filter.form.start_date class="input form-control form-control-sm" placeholder="mm/dd/yyyy" %}
+                <span class="input-group-addon"> &nbsp - &nbsp </span>
+                {% render_field filter.form.end_date class="input form-control form-control-sm" placeholder="mm/dd/yyyy" %}
+            </div>
+            <div>
+                {% render_field filter.form.category class="input form-check form-check-inline" %}
+                <input type="submit" class="btn-secondary" value="Search">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock search%}
+
+{% block content %}
+{% load render_table from django_tables2 %}
+    <div class="table-responsive">
+        {% render_table table %}
+    </div>
+{% endblock content %}

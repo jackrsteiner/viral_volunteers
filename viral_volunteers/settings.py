@@ -132,6 +132,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+#STATIC_URL = BASE_DIR+'/'
+
+
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 DJANGO_TABLES2_TEMPLATE = 'django_tables2/bootstrap4.html'
@@ -152,8 +159,13 @@ TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
 }
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'notices-notice_create'
 LOGIN_URL = 'login'
 
 EMAIL_HOST = '127.0.0.1'
 EMAIL_PORT = '1025'
+
+PRODUCTION = True if os.getenv('PRODUCTION') == '1' else False
+
+if PRODUCTION:
+    from .settings_deploy import *

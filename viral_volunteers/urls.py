@@ -21,10 +21,14 @@ from users import views as user_views
 from notices import views as notice_views
 from . import views
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 notice_resource = NoticeResource()
 
 urlpatterns = [
-    path('', notice_views.notice_search_table, name='home'),
+    #path('', notice_views.notice_search_table, name='home'),
+    path('', notice_views.FilteredTableView.as_view(), name='home'),
     path('about/', views.about, name='about'),
     path('testing', views.testim, name='testy'),
     path('', include ('vv_app.urls')),
@@ -51,3 +55,4 @@ urlpatterns = [
         auth_views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'),
         name='password_reset_complete'),
 ]
+#+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -7,7 +7,8 @@ from .views import (
     NoticeTableViewHome,
     UserNoticeListView,
     NoticeFilter,
-    NoticeTableView
+    NoticeTableView,
+    FilteredTableView
 
 )
 from notices import views
@@ -27,5 +28,7 @@ urlpatterns = [
 
     path('table/', NoticeTableView.as_view(
         template_name='notices/notice_table.html'), name='notices-table'),
+    
+    path('ft/', FilteredTableView.as_view())
 
 ]
