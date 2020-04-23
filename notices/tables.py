@@ -10,6 +10,7 @@ class NoticeTable(tables.Table):
 class NoticeTableCustom(tables.Table):
     class Meta:
         model = Notice
+        order_by = ('-last_modified')
         template_name = "django_tables2/bootstrap4.html"
         fields = ('active', 'last_modified', 'category', 'title', 'country', 'province')
         attrs = {"class": "table table-sm table-striped table-bordered"}
