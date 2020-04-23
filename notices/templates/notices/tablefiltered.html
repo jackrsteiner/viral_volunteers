@@ -20,8 +20,22 @@
 {% endblock search%}
 
 {% block content %}
+<style>
+    tr.ft-row{
+        cursor: pointer;
+    }
+    tr.ft-row:hover { color: rgb(1, 4, 194); }
+</style>
 {% load render_table from django_tables2 %}
     <div class="table-responsive">
         {% render_table table %}
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function($) {
+            $("tr").click(function() {
+                window.location = $(this).data("href");
+            });
+        });
+    </script>
 {% endblock content %}
