@@ -71,7 +71,9 @@ class NoticeCreateView(LoginRequiredMixin, CreateView):
 
 class NoticeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Notice
-    fields = ['title', 'category', 'body', 'web', 'email', 'phone', 'country', 'province', 'postal', 'active']
+    form_class = NoticeCreateForm
+
+#    fields = ['title', 'category', 'body', 'web', 'email', 'phone', 'country', 'province', 'postal', 'active']
 
     def form_valid(self, form):
         form.instance.author = self.request.user

@@ -16,7 +16,7 @@ class NoticeCreateForm(forms.ModelForm):
         widget=TextInput
         )
     active = forms.BooleanField(
-        help_text="Deselect this to archive your notice.",
+        help_text="Deselect this to hide an out-of-date notice.",
         widget=CheckboxInput,
         initial=True,
         required=False
