@@ -13,12 +13,14 @@
             </div>                
             <h2 class="article-title">{{ object.title }}</a></h2>
             <p class="article-content">{{ object.body | safe }}</p>
-            <p class="article-content">{{ object.country }}</p>
-            <p class="article-content">{{ object.province }}</p>
-            <p class="article-content">{{ object.postal }}</p>
-            <p class="article-content">{{ object.web|urlize }}</p>
-            <p class="article-content">{{ object.email|urlize }}</p>
-            <p class="article-content">{{ object.phone }}</p>
+            <h3>Location:</h3>
+            <p class="article-content">{{ object.province }}{% if object.province and object.country %}, {% endif %}{{ object.country }} {{ object.postal }}</p>
+            <h3>Further details:</h3>
+            <p class="article-content">Link: {{ object.web|urlize }}</p>
+            <p class="article-content">Email: {{ object.email|urlize }}</p>
+            <p class="article-content">Phone: {{ object.phone }}</p>
+            <h4>Still active or just an archive?</h4>
+            <p class="article-content">{{ object.active|yesno:"Active,Archived" }}</p>
         </div>
     </article>
 {% endblock content %}
