@@ -10,9 +10,12 @@
                 <span class="input-group-addon"> &nbsp - &nbsp </span>
                 {% render_field filter.form.end_date class="input form-control form-control-sm" placeholder="mm/dd/yyyy" %}
             </div>
-            <div>
-                {% render_field filter.form.category class="input form-check form-check-inline" %}
-                <input type="submit" class="btn-secondary" value="Search">
+            <div class="input-group">
+                <small>
+                    <tag class="ml-2">{% render_field filter.form.category class="input form-check form-check-inline" %}</tag>
+                    <input type="submit" class="btn btn-secondary btn-sm mt-1" value="Search">
+                    <tag class="ml-2">active notices{% render_field filter.form.active checked="checked" %}</tag>
+                </small>
             </div>
         </div>
     </form>

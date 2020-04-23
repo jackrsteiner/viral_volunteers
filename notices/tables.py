@@ -8,6 +8,8 @@ class NoticeTable(tables.Table):
         fields = ('active', 'last_modified', 'category', 'title', 'country', 'province')
 
 class NoticeTableCustom(tables.Table):
+    last_modified = tables.DateColumn(format='dMY')
+
     class Meta:
         model = Notice
         order_by = ('-last_modified')
