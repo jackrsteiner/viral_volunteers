@@ -1,6 +1,8 @@
 from django import forms
 from django.forms.widgets import TextInput, CheckboxInput
+from phonenumber_field.widgets import PhoneNumberPrefixWidget
 from notices.models import Notice
+from phonenumber_field.formfields import PhoneNumberField
 
 class NoticeCreateForm(forms.ModelForm):
     title = forms.CharField(
@@ -14,13 +16,14 @@ class NoticeCreateForm(forms.ModelForm):
         help_text="Provide a link with more info.", 
         initial="http://",
         widget=TextInput
-        )
+    )
     active = forms.BooleanField(
         help_text="Deselect this to hide an out-of-date notice.",
         widget=CheckboxInput,
         initial=True,
         required=False
     )
+    phone = PhoneNumberField(widget=PhoneNumberPrefixWidget)
 
     class Meta:
         model = Notice

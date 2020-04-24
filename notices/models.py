@@ -65,16 +65,16 @@ class Notice(models.Model):
     def get_absolute_url(self):
         return reverse('notices-notice_detail', kwargs={'pk': self.pk})
 
-class Comment(models.Model):
-    notice = models.ForeignKey(Notice,on_delete=models.CASCADE,related_name='comments')
-    title = models.CharField(max_length=80)
-    commenter = models.ForeignKey(User, on_delete=models.SET(get_sentinel_user))
-    body = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=False)
+# class Comment(models.Model):
+#     notice = models.ForeignKey(Notice,on_delete=models.CASCADE,related_name='comments')
+#     title = models.CharField(max_length=80)
+#     commenter = models.ForeignKey(User, on_delete=models.SET(get_sentinel_user))
+#     body = models.TextField()
+#     created_on = models.DateTimeField(auto_now_add=True)
+#     active = models.BooleanField(default=False)
 
-    class Meta:
-        ordering = ['created_on']
+#     class Meta:
+#         ordering = ['created_on']
 
-    def __str__(self):
-        return 'Comment {} by {}'.format(self.body, self.commenter)
+#     def __str__(self):
+#         return 'Comment {} by {}'.format(self.body, self.commenter)
