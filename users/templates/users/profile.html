@@ -11,4 +11,6 @@
             <!-- FORM HERE -->
     </div>
     <!-- Insert all user's notices here -->
+    <a href="{% url 'user-notice_list' user.username %}">View all your notices, including inactive/archived ones.</a>
+    {% include "notices/user_noticeslist.html" %}
 {% endblock content %}
