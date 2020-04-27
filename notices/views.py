@@ -114,3 +114,6 @@ class FilteredTableView(SingleTableMixin, FilterView):
 
     filterset_class = NoticeTableCustomFilter
     table_pagination = {"per_page": 10}
+
+    def get_queryset(self):
+        return Notice.objects.exclude(active=False)

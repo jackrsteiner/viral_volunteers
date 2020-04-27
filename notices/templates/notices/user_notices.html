@@ -9,6 +9,9 @@
                     {% if notice.last_modified|date != notice.created_at|date %}
                         <br><small class="text-muted">Updated {{ notice.last_modified}}</small>
                     {% endif %}
+                    {% if notice.active == False %}
+                        <em class="text-danger">This notice is archived</em>
+                    {% endif %}
                 </div>
                 <h2><a class="article-title" href="{% url 'notices-notice_detail' notice.id %}">{{ notice.title }}</a></h2>
                 <p class="article-content">{{ notice.body | safe }}</p>
