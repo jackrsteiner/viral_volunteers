@@ -1,4 +1,4 @@
-Django==3.0.4
+Django==3.1.6
 django-countries==6.1.2
 django-crispy-forms==1.9.0
 django-phonenumber-field==4.0.0
